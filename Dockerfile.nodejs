@@ -1,0 +1,18 @@
+FROM node:6.11.2-alpine
+
+RUN apk update
+RUN apk add --upgrade make musl libstdc++
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+# Install dependecies first (and keep them cached)
+COPY app/package.json /usr/src/app
+RUN yarn install
+
+# Bundle app source (doesn't require of installing the node_modules again)
+COPY app/ /usr/src/app
+
+EXPOSE 5000
+
+CMD ["yarn", "start"]
