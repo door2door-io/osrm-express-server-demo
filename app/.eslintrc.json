@@ -1,0 +1,23 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "never"],
+    "quotes": ["error", "double"],
+    "consistent-return": "off",
+    "no-multiple-empty-lines": ["error", {"max": 1}],
+    "no-nested-ternary": "off",
+    "no-unused-vars": ["warn", {
+      "vars": "local",
+      "varsIgnorePattern": "^_",
+      "args": "none"
+    }],
+    "import/no-unresolved": "off"
+  },
+  "env": {
+    "node": true
+  }
+}

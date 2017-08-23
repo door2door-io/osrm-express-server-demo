@@ -1,0 +1,31 @@
+{
+  "name": "osrm-express-server",
+  "version": "1.0.0",
+  "description": "Express server wrapping OSRM",
+  "main": "src/run.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/run.js",
+    "lint": "eslint --max-warnings=0 src test",
+    "fix": "eslint --fix src test",
+    "test": "tape test/*.js"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "helmet": "^3.4.1",
+    "logfmt": "^1.2.0",
+    "osrm": "5.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.16.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.1.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "supertest": "^3.0.0",
+    "tape": "^4.6.3"
+  }
+}
