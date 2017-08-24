@@ -5,7 +5,6 @@
 process.env.NODE_ENV = "test";
 process.env.LOG_LEVEL = "error";
 
-const path = require("path");
 const test = require("tape");
 const request = require("supertest");
 
