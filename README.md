@@ -41,7 +41,7 @@ and get a similar response:
 
 * the main application: `docker build -t osrm-express-server -f Dockerfile.nodejs .`
 * osmctools for data manipulation: `docker build -t osmium-tool -f Dockerfile.osmium-tool .`
-* osrm-backend to generate the routable graph: `docker pull osrm/osrm-backend:v5.11.0`
+* osrm-backend to generate the routable graph: `docker pull osrm/osrm-backend:v5.12.0`
 
 ## Data preprocessing
 
@@ -74,13 +74,13 @@ Read more about Poly-files [here](http://wiki.openstreetmap.org/wiki/Osmosis/Pol
 Once we have our dataset, we can pass it to the OSRM container to create a routable graph with a given profile (car, foot, bike, ...):
 
     # extract the network and create the osrm file(s)
-    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.11.0 osrm-extract -p /opt/car.lua /data/osrm/example-areas/example-areas.osm.pbf
+    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.12.0 osrm-extract -p /opt/car.lua /data/osrm/example-areas/example-areas.osm.pbf
 
     # partition the dataset
-	docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.11.0 osrm-partition /data/osrm/example-areas/example-areas.osrm
+	docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.12.0 osrm-partition /data/osrm/example-areas/example-areas.osrm
 
     # create the graph
-    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.11.0 osrm-contract /data/osrm/example-areas/example-areas.osrm
+    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.12.0 osrm-contract /data/osrm/example-areas/example-areas.osrm
 
 The dataset is now available at `./data/osrm/example-areas` and can be used by any OSRM instance running the same version.
 
