@@ -7,7 +7,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install dependecies first (and keep them cached)
-COPY app/package.json app/yarn.lock /usr/src/app/
+COPY app/package.json /usr/src/app/
 RUN yarn install
 
 # Bundle app source (doesn't require of installing the node_modules again)
