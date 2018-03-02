@@ -18,7 +18,7 @@
     "express": "^4.16.2",
     "helmet": "^3.9.0",
     "logfmt": "^1.2.0",
-    "osrm": "5.14.2"
+    "osrm": "5.16.1"
   },
   "devDependencies": {
     "eslint": "^4.15.0",
