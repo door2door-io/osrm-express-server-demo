@@ -41,7 +41,7 @@ and get a similar response:
 
 * the main application: `docker build -t osrm-express-server -f Dockerfile.nodejs .`
 * osmctools for data manipulation: `docker build -t osmium-tool -f Dockerfile.osmium-tool .`
-* osrm-backend to generate the routable graph: `docker pull osrm/osrm-backend:v5.14.2`
+* osrm-backend to generate the routable graph: `docker pull osrm/osrm-backend:v5.16.1`
 
 ## Data preprocessing
 
@@ -75,10 +75,10 @@ Once we have our dataset, we can pass it to the OSRM container to create a routa
 with the contraction hierachies algorithm:
 
     # extract the network and create the osrm file(s)
-    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.14.2 osrm-extract -p /opt/car.lua /data/osrm/example-areas/example-areas.osm.pbf
+    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.16.1 osrm-extract -p /opt/car.lua /data/osrm/example-areas/example-areas.osm.pbf
 
     # create the graph
-    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.14.2 osrm-contract /data/osrm/example-areas/example-areas.osrm
+    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.16.1 osrm-contract /data/osrm/example-areas/example-areas.osrm
 
 The dataset is now available at `./data/osrm/example-areas` and can be used by any OSRM instance running the same version.
 
@@ -131,5 +131,5 @@ In order to run the tests in the container, execute the following commands:
 The test graph is a small subsample of areas in Berlin and London and is included in this repository.
 Whenever you upgrade to a newer OSRM version, you need to rebuild the test graph as well to successfully run the tests again:
 
-    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.14.2 osrm-extract -p /opt/car.lua /data/osrm/test/test.osm.pbf
-    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.14.2 osrm-contract /data/osrm/test/test.osrm
+    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.16.1 osrm-extract -p /opt/car.lua /data/osrm/test/test.osm.pbf
+    docker run -it -v $(pwd)/data:/data osrm/osrm-backend:v5.16.1 osrm-contract /data/osrm/test/test.osrm
