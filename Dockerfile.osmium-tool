@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
@@ -17,6 +17,13 @@ RUN apk add --no-cache \
         proj4-dev \
         sparsehash \
         zlib-dev && \
+    git clone https://github.com/mapbox/protozero.git && \
+        cd protozero && \
+        mkdir build && \
+        cd build && \
+        cmake .. && \
+        make && \
+    cd /usr/src/apps && \
     git clone https://github.com/osmcode/libosmium.git && \
         cd libosmium && \
         mkdir build && \
