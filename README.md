@@ -40,7 +40,7 @@ and get a similar response:
 ## Setup - Building the containers
 
 * the main application: `docker build -t osrm-express-server -f Dockerfile.nodejs .`
-* osmctools for data manipulation: `docker build -t osmium-tool -f Dockerfile.osmium-tool .`
+* osmium-tool for data manipulation: `docker build -t osmium-tool -f Dockerfile.osmium-tool .`
 * osrm-backend to generate the routable graph: `docker pull osrm/osrm-backend:v5.16.1`
 
 ## Data preprocessing
@@ -63,7 +63,7 @@ If your preferred region is not available, you can take a larger dataset and cli
 The following will use the `europe-latest.osm.pbf` dataset, extract Berlin and London and save it as a new
 dataset.
 
-We can now make use of the previously containerised `osmctools` to extract specific areas with a `.poly` file.
+We can now make use of the previously containerised `osmium-tool` to extract specific areas with a `.poly` file.
 Read more about Poly-files [here](http://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Format):
 
     docker run -it -v $(pwd)/data:/data osmium-tool extract -p /data/polyfiles/example-areas.poly /data/osrm/example-areas/europe-latest.osm.pbf -o /data/osrm/example-areas/example-areas.osm.pbf
