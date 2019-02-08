@@ -1,7 +1,7 @@
-FROM node:8-alpine
+FROM node:10-stretch
 
-RUN apk update
-RUN apk add --upgrade make musl libstdc++
+RUN apt-get update
+RUN apt-get install -y make libstdc++
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
