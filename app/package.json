@@ -11,14 +11,14 @@
     "test": "tape test/*.js | tap-summary"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=10.0.0"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "helmet": "^3.9.0",
     "logfmt": "^1.2.0",
-    "osrm": "5.16.1"
+    "osrm": "5.22.0"
   },
   "devDependencies": {
     "eslint": "^4.15.0",
