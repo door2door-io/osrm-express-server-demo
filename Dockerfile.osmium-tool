@@ -1,5 +1,7 @@
 FROM debian:stretch
 
+# Credit to https://github.com/stefda/docker-osmium-tool/ for his version of this file.
+
 ENV OSMIUM_TOOL_VERSION 1.10.0
 
 RUN echo 'deb http://ftp.debian.org/debian stretch-backports main' >> /etc/apt/sources.list.d/backports.list
